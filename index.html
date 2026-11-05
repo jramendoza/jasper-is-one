@@ -1,0 +1,248 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head><meta name="ms-sp-authoring-source" content="agent"><style data-sp-site-theme>:root{--colorBrandBackground:#0078d4;--colorBrandBackgroundHover:#106ebe;--colorBrandBackground2:#eff6fc;--colorBrandForeground1:#0078d4;--colorNeutralForeground1:#323130;--colorNeutralForeground2:#605e5c;--colorNeutralForegroundOnBrand:#ffffff;--colorNeutralBackground1:#ffffff;--colorNeutralBackground2:#faf9f8;--colorNeutralStroke1:#d2d0ce;--fontFamily:'Segoe UI', 'Segoe UI Web (West European)', -apple-system, BlinkMacSystemFont, Roboto, 'Helvetica Neue', sans-serif;}</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#dff3ff">
+  <meta name="description" content="Jasper Philip's Dedication and 1st Birthday invitation">
+  <title>Jasper is One</title>
+  <style>
+    :root {
+      --sky-top: #eefaff;
+      --sky-bottom: #b9ddf5;
+      --ink: #294b63;
+      --muted: #63869b;
+      --blue: #62acd5;
+      --deep-blue: #397da6;
+      --cream: #fffaf1;
+      --gold: #d4a55f;
+      --card: rgba(255,255,255,.86);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      overflow-x: hidden;
+      color: var(--ink);
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: linear-gradient(180deg, var(--sky-top), var(--sky-bottom));
+    }
+    button, a { font: inherit; }
+    button { touch-action: manipulation; }
+    .app {
+      position: relative;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      padding: 22px 14px 78px;
+      isolation: isolate;
+    }
+    .stars {
+      position: fixed; inset: 0; z-index: -4; pointer-events: none;
+      background-image:
+        radial-gradient(circle at 12% 13%, #fff 0 2px, transparent 3px),
+        radial-gradient(circle at 80% 11%, #fff 0 2px, transparent 3px),
+        radial-gradient(circle at 90% 31%, rgba(255,255,255,.9) 0 2px, transparent 3px),
+        radial-gradient(circle at 25% 43%, rgba(255,255,255,.8) 0 1.5px, transparent 2.5px),
+        radial-gradient(circle at 67% 65%, rgba(255,255,255,.75) 0 1.5px, transparent 2.5px);
+    }
+    .cloud { position: fixed; z-index: -3; opacity: .9; pointer-events: none; }
+    .cloud::before, .cloud::after, .cloud span {
+      content: ""; position: absolute; background: #fff; border-radius: 999px;
+      filter: drop-shadow(0 9px 10px rgba(83,138,168,.10));
+    }
+    .cloud span { width: 180px; height: 45px; left: 0; top: 45px; }
+    .cloud::before { width: 88px; height: 88px; left: 24px; top: 5px; }
+    .cloud::after { width: 108px; height: 108px; left: 82px; top: 0; }
+    .cloud-left { left: -58px; top: 14%; transform: scale(.9); }
+    .cloud-right { right: 95px; top: 42%; transform: scale(.7); }
+    .cloud-floor {
+      position: fixed; z-index: -2; left: -5%; right: -5%; bottom: -65px; height: 150px;
+      background: rgba(255,255,255,.94); border-radius: 50% 50% 0 0/65% 65% 0 0;
+    }
+    .shell { width: min(100%, 720px); }
+    .card {
+      min-height: 620px;
+      padding: 26px 24px 22px;
+      display: flex; flex-direction: column; justify-content: center; align-items: center;
+      text-align: center;
+      background: var(--card);
+      border: 1px solid rgba(255,255,255,.96);
+      border-radius: 30px;
+      box-shadow: 0 22px 58px rgba(53,111,145,.20);
+      backdrop-filter: blur(9px);
+    }
+    .page { width: 100%; animation: fadeUp .55s ease both; }
+    .hidden { display: none !important; }
+    .scene {
+      position: relative; width: 150px; height: 192px; margin: 0 auto 2px;
+      animation: float 4s ease-in-out infinite;
+    }
+    .balloon {
+      position: absolute; top: 0; left: 27px; width: 96px; height: 114px;
+      border-radius: 52% 52% 46% 46%;
+      background: linear-gradient(90deg,#79bce0 0 22%,#f8f0de 22% 39%,#6caed5 39% 61%,#f8f0de 61% 78%,#79bce0 78%);
+      box-shadow: inset -8px -9px 15px rgba(41,91,122,.12);
+    }
+    .balloon::after { content: ""; position: absolute; bottom: -10px; left: 40px; border-left: 8px solid transparent; border-right: 8px solid transparent; border-top: 16px solid #6d9bb5; }
+    .rope { position: absolute; top: 118px; width: 2px; height: 34px; background: #947755; }
+    .rope.one { left: 49px; transform: rotate(7deg); }
+    .rope.two { right: 48px; transform: rotate(-7deg); }
+    .basket { position: absolute; left: 46px; top: 146px; width: 58px; height: 38px; background: linear-gradient(#c7975b,#a8753f); border-radius: 5px 5px 12px 12px; border-top: 5px solid #8e6235; }
+    .bear { position: absolute; z-index: 2; left: 58px; top: 114px; width: 34px; height: 39px; background: #a87951; border-radius: 50% 50% 43% 43%; }
+    .bear::before, .bear::after { content: ""; position: absolute; top: -3px; width: 13px; height: 13px; background: #996b47; border-radius: 50%; }
+    .bear::before { left: -5px; } .bear::after { right: -5px; }
+    .face { position: absolute; z-index: 3; left: 65px; top: 124px; font-size: 13px; color: #3e2f28; letter-spacing: 2px; }
+    .eyebrow { margin: 2px 0 8px; color: var(--muted); font-size: 12px; font-weight: 800; letter-spacing: 2.3px; text-transform: uppercase; }
+    h1 { margin: 5px auto 12px; color: #315f7c; font-family: Georgia, serif; font-size: clamp(29px, 6vw, 43px); line-height: 1.1; }
+    h2 { margin: 5px auto 13px; color: #315f7c; font-family: Georgia, serif; font-size: clamp(25px, 5vw, 35px); line-height: 1.18; }
+    .age { display: block; color: var(--deep-blue); font-size: clamp(48px, 12vw, 78px); line-height: .95; text-shadow: 0 4px 0 rgba(255,255,255,.75); }
+    .message { max-width: 545px; margin: 0 auto 18px; font-size: clamp(15px, 3.4vw, 18px); line-height: 1.7; }
+    .intro-message { margin-top: 26px; margin-bottom: 26px; }
+    .name { color: var(--deep-blue); font-weight: 800; }
+    .details { display: grid; gap: 12px; max-width: 540px; margin: 20px auto 22px; text-align: left; }
+    .detail {
+      display: grid; grid-template-columns: 46px 1fr; gap: 12px; align-items: center;
+      padding: 13px 15px; border: 1px solid rgba(95,168,211,.25); border-radius: 17px;
+      background: rgba(255,255,255,.63);
+    }
+    .icon { display: grid; place-items: center; width: 46px; height: 46px; border-radius: 50%; background: #e3f4fd; font-size: 22px; }
+    .detail strong { display: block; margin-bottom: 2px; color: #315f7c; }
+    .detail span { color: #4e7186; font-size: 14px; line-height: 1.45; }
+    .dress-code { max-width: 540px; margin: 8px auto 20px; padding: 16px; border: 1px solid rgba(95,168,211,.25); border-radius: 17px; background: rgba(255,255,255,.7); }
+    .dress-code h3 { margin: 0 0 8px; color: #315f7c; font-family: Georgia, serif; font-size: 20px; }
+    .dress-code p { margin: 5px 0; font-size: 14px; line-height: 1.5; }
+    .palette { display: flex; flex-wrap: wrap; justify-content: center; gap: 9px; margin-top: 12px; }
+    .palette-item { display: flex; align-items: center; gap: 6px; padding: 6px 9px; border: 1px solid rgba(41,75,99,.12); border-radius: 999px; background: #fff; font-size: 12px; }
+    .swatch { width: 18px; height: 18px; border: 1px solid rgba(41,75,99,.18); border-radius: 50%; }
+    .white-swatch { background: #fff; border: 2px solid #63869b; box-shadow: 0 0 0 1px rgba(41,75,99,.22); }
+    .verse { max-width: 510px; margin: 18px auto 22px; padding: 18px; color: #486d82; font-family: Georgia, serif; font-size: 17px; font-style: italic; line-height: 1.6; border-top: 1px solid #b8d9ea; border-bottom: 1px solid #b8d9ea; }
+    .actions { display: flex; justify-content: center; flex-wrap: wrap; gap: 10px; }
+    button, .map-link {
+      border: 0; border-radius: 999px; padding: 12px 21px; cursor: pointer; font-weight: 700;
+      text-decoration: none; transition: transform .18s ease, box-shadow .18s ease;
+    }
+    button:hover, .map-link:hover { transform: translateY(-2px); }
+    button:focus-visible, .map-link:focus-visible { outline: 3px solid rgba(57,125,166,.30); outline-offset: 2px; }
+    .primary { color: #fff; background: linear-gradient(135deg,var(--blue),var(--deep-blue)); box-shadow: 0 8px 18px rgba(57,125,166,.25); }
+    .secondary { color: var(--deep-blue); background: #fff; border: 1px solid #b9d6e7; }
+    .dots { display: flex; gap: 7px; justify-content: center; margin-top: 20px; }
+    .dot { width: 8px; height: 8px; padding: 0; background: rgba(57,125,166,.25); border-radius: 50%; }
+    .dot.active { width: 24px; background: var(--deep-blue); }
+    .footer-note { min-height: 18px; margin: 12px 0 0; color: #66889b; font-size: 12px; }
+    @keyframes float { 50% { transform: translateY(-9px) rotate(1deg); } }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+    @media (max-width: 600px) {
+      .card { min-height: 650px; padding: 24px 16px 20px; }
+      .cloud-right { right: -25px; }
+      .details { gap: 9px; }
+      .detail { grid-template-columns: 40px 1fr; padding: 11px 12px; }
+      .icon { width: 40px; height: 40px; font-size: 19px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration: .01ms !important; scroll-behavior: auto !important; }
+    }
+  </style>
+</head>
+<body>
+  <main class="app">
+    <div class="stars"></div>
+    <div class="cloud cloud-left"><span></span></div>
+    <div class="cloud cloud-right"><span></span></div>
+    <div class="cloud-floor"></div>
+
+    <div class="shell">
+      <section class="card" aria-live="polite">
+        <div class="scene" aria-label="Teddy bear riding in a blue hot-air balloon">
+          <div class="balloon"></div><div class="rope one"></div><div class="rope two"></div>
+          <div class="bear"></div><div class="face">•ᴥ•</div><div class="basket"></div>
+        </div>
+
+        <section class="page" id="page1">
+          <p class="eyebrow">Up, up and away to a special day</p>
+          <h1>Jasper is One</h1>
+          <p class="eyebrow">Dedication &amp; 1st Birthday</p>
+          <p class="message intro-message">With grateful hearts, we invite you to celebrate the <strong>Dedication and 1st Birthday</strong> of our little blessing</p>
+          
+          <div class="actions">
+            <button type="button" class="primary" data-page="2">Open the invitation 🎈</button>
+          </div>
+        </section>
+
+        <section class="page hidden" id="page2">
+          <p class="eyebrow">Save the date</p>
+          <h2>Dedication &amp; 1st Birthday Details</h2>
+          <div class="details">
+            <div class="detail"><div class="icon">📅</div><div><strong>Saturday, December 19, 2026</strong><span>A joyful celebration of Jasper Philip's first year</span></div></div>
+            <div class="detail"><div class="icon">🕤</div><div><strong>9:30 AM</strong><span>Kindly arrive a little early so we can begin together</span></div></div>
+            <div class="detail"><div class="icon">📍</div><div><strong>El Sueño Events Place and Resort</strong><span>#21 Cecilia St., Sta. Teresita Village, Malanday, Marikina City, Philippines</span></div></div>
+          </div>
+          <div class="dress-code">
+            <h3>Color Palette &amp; Dress Code</h3>
+            <p><strong>Godparents:</strong> White</p>
+            <p><strong>Guests:</strong> Please choose from the colors below and leave white for the Godparents.</p>
+            <div class="palette" aria-label="Guest colors: sky blue, powder blue, champagne, and teddy brown">
+              <span class="palette-item"><span class="swatch" style="background:#79bce0"></span>Sky blue</span>
+              <span class="palette-item"><span class="swatch" style="background:#b9ddf5"></span>Powder blue</span>
+              <span class="palette-item"><span class="swatch" style="background:#e8d3b5"></span>Champagne</span>
+              <span class="palette-item"><span class="swatch" style="background:#a87951"></span>Teddy brown</span>
+            </div>
+          </div>
+          <div class="actions">
+            <button type="button" class="secondary" data-page="1">Back</button>
+            <a class="map-link primary" href="https://www.google.com/maps/dir/?api=1&amp;destination=El+Sue%C3%B1o+Events+Place+and+Resort+21+Cecilia+St+Sta+Teresita+Village+Malanday+Marikina+City+Philippines" target="_blank" rel="noopener noreferrer">Get directions 📍</a>
+            <button type="button" class="primary" data-page="3">Continue ☁️</button>
+          </div>
+        </section>
+
+        <section class="page hidden" id="page3">
+          <p class="eyebrow">A day of faith, love and celebration</p>
+          <h2>Come Celebrate With Us</h2>
+          <p class="message">Join our family as we give thanks for Jasper Philip, dedicate him to God, and celebrate his very first trip around the sun.</p>
+          <div class="verse">“Every good and perfect gift is from above.”<br><strong>James 1:17</strong></div>
+          <p class="message">Your presence will make this milestone even more meaningful. We cannot wait to share this beautiful day with you.</p>
+          <div class="actions">
+            <button type="button" class="secondary" data-page="2">Back</button>
+          </div>
+          <p class="message">We’d love to celebrate with you! Please RSVP using the link below on or before November 30, 2026. We can’t wait to see you! ☁️🎈</p>
+          <div class="actions"><a class="map-link primary" href="https://forms.gle/21B7nnWtqooeXjFM8" target="_blank" rel="noopener noreferrer">RSVP here ☁️</a></div>
+        </section>
+
+        <nav class="dots" aria-label="Invitation pages">
+          <button type="button" class="dot active" data-page="1" aria-label="Go to page 1"></button>
+          <button type="button" class="dot" data-page="2" aria-label="Go to page 2"></button>
+          <button type="button" class="dot" data-page="3" aria-label="Go to page 3"></button>
+        </nav>
+      </section>
+    </div>
+  </main>
+
+  <script>
+    (() => {
+      const pages = [...document.querySelectorAll('.page')];
+      const dots = [...document.querySelectorAll('.dot')];
+
+      function showPage(number) {
+        const safePage = Math.min(3, Math.max(1, Number(number) || 1));
+        pages.forEach((page, index) => page.classList.toggle('hidden', index !== safePage - 1));
+        dots.forEach((dot, index) => {
+          dot.classList.toggle('active', index === safePage - 1);
+          dot.setAttribute('aria-current', index === safePage - 1 ? 'page' : 'false');
+        });
+        document.querySelector(`#page${safePage}`).focus?.({preventScroll: true});
+      }
+
+      document.querySelectorAll('[data-page]').forEach(control => {
+        control.addEventListener('click', () => showPage(control.dataset.page));
+      });
+
+      document.addEventListener('keydown', event => {
+        const current = dots.findIndex(dot => dot.classList.contains('active')) + 1;
+        if (event.key === 'ArrowRight') showPage(current + 1);
+        if (event.key === 'ArrowLeft') showPage(current - 1);
+      });
+    })();
+  </script>
+</body>
+</html>
